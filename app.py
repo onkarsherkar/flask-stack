@@ -44,3 +44,9 @@ def jsondata():
     json_data = request.get_json()
     # api_input = json
     return {"api_data": json_data}
+
+
+@app.route("/error")
+def error():
+    a = 1 / 0
+    return "error"
