@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -22,3 +22,10 @@ def json():
 @app.route("/dynamic/<user_input>")
 def dynamic(user_input):
     return f"<h2>The usered eneter text:{user_input} </h2>"
+
+
+@app.route("/query")
+def query():
+    first = request.args.get("first")
+    second = request.args.get("second")
+    return f"<h1>The query string contains: {first} and {second}</h1>"
