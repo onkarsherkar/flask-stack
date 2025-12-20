@@ -37,3 +37,10 @@ def form():
         user_input = request.form.get("user_input")
         return f"<h1>User input: {user_input}</h1>"
     return '<form method="post"><input type="text" name="user_input" /><input type="submit" /></form>'
+
+
+@app.route("/jsondata")
+def jsondata():
+    json_data = request.get_json()
+    # api_input = json
+    return {"api_data": json_data}
