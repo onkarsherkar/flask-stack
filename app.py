@@ -29,3 +29,11 @@ def query():
     first = request.args.get("first")
     second = request.args.get("second")
     return f"<h1>The query string contains: {first} and {second}</h1>"
+
+
+@app.route("/form", methods=["GET", "POST"])
+def form():
+    if request.method == "POST":
+        user_input = request.form.get("user_input")
+        return f"<h1>User input: {user_input}</h1>"
+    return '<form method="post"><input type="text" name="user_input" /><input type="submit" /></form>'
