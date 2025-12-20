@@ -8,7 +8,7 @@ def index():
     return "<h1>Hello Flask</h1>"
 
 
-@app.route("/home")
+@app.route("/home", methods=["GET"])
 def home():
     return "<h2>Home</h2>"
 
