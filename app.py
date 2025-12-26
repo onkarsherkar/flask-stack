@@ -1,11 +1,11 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    return "<h1>Hello Flask</h1>"
+    return render_template("index.html")
 
 
 @app.route("/home", methods=["GET"])
