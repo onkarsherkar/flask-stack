@@ -10,7 +10,7 @@ def index():
 
 @app.route("/home", methods=["GET"])
 def home():
-    return "<h2>Home</h2>"
+    return render_template("home.html", number=5)
 
 
 @app.route("/json")
