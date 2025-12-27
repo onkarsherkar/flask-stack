@@ -10,7 +10,19 @@ def index():
 
 @app.route("/home", methods=["GET"])
 def home():
-    return render_template("home.html", number=5)
+    return render_template(
+        "home.html",
+        number=5,
+        data=[
+            {"SUN": 1},
+            {"MON": 2},
+            {"TUE": 3},
+            {"WED": 4},
+            {"THU": 5},
+            {"FRI": 6},
+            {"SAT": 7},
+        ],
+    )
 
 
 @app.route("/json")
