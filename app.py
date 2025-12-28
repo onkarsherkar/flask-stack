@@ -1,6 +1,9 @@
 from flask import Flask, request, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite3"
+db = SQLAlchemy(app)
 
 
 @app.route("/")
@@ -48,7 +51,12 @@ def form():
     if request.method == "POST":
         user_input = request.form.get("user_input")
         return f"<h1>User input: {user_input}</h1>"
-    return '<form method="post"><input type="text" name="user_input" /><input type="submit" /></form>'
+    return (
+        '<form method="post">'
+        '<input type="text" name="user_input" />'
+        '<input type="submit" />'
+        '</form>'
+    )
 
 
 @app.route("/jsondata")
