@@ -76,3 +76,11 @@ def jsondata():
 def error():
     a = 1 / 0
     return "error"
+
+
+def insert_data():
+    from datetime import datetime
+
+    new_user = User(name="Tom", date_joined=datetime.now())
+    db.session.add(new_user)
+    db.session.commit()
