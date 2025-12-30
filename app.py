@@ -90,3 +90,9 @@ def update_first_user():
     user = User.query.first()
     user.name = "Flask User"
     db.session.commit()
+
+
+def delete_first_user():
+    user = User.query.first()
+    db.session.delete(user)
+    db.session.commit()
