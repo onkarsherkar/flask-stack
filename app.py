@@ -84,3 +84,9 @@ def insert_data():
     new_user = User(name="Tom", date_joined=datetime.now())
     db.session.add(new_user)
     db.session.commit()
+
+
+def update_first_user():
+    user = User.query.first()
+    user.name = "Flask User"
+    db.session.commit()
